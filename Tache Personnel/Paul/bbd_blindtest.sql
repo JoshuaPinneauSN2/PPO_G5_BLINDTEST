@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 29 Novembre 2019 à 14:50
+-- Généré le :  Ven 29 Novembre 2019 à 15:01
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bbd_blindtest`
 --
+CREATE DATABASE IF NOT EXISTS `bbd_blindtest` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bbd_blindtest`;
 
 -- --------------------------------------------------------
 

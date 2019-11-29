@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 22 Novembre 2019 à 10:35
+-- Généré le :  Ven 29 Novembre 2019 à 13:09
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -36,18 +36,8 @@ CREATE TABLE `artiste` (
 --
 
 INSERT INTO `artiste` (`id`, `nom`) VALUES
-(1, 'PNL'),
-(2, 'Nekfeu'),
-(3, 'Booba'),
-(4, 'Kaaris'),
-(5, 'Lomepal'),
-(6, 'Romeo Elvis'),
-(7, 'Vald'),
-(8, 'Ninho'),
-(9, 'Lorenzo'),
-(10, 'Mister V'),
-(11, 'Europe'),
-(12, 'a-ha');
+(1, 'Nekfeu'),
+(2, 'Ninho');
 
 -- --------------------------------------------------------
 
@@ -78,18 +68,8 @@ CREATE TABLE `musique` (
 --
 
 INSERT INTO `musique` (`id_musique`, `nom`, `artiste_id`, `theme_idtheme`) VALUES
-(1, 'Blanka', 1, 1),
-(2, 'Mon Reuf', 2, 1),
-(3, 'Arc en Ciel', 3, 1),
-(4, 'Diaraby', 4, 1),
-(5, 'Trop Beau', 5, 1),
-(6, 'Malade', 6, 1),
-(7, 'Désaccordé', 7, 1),
-(8, 'Putana', 8, 1),
-(9, 'Damdamdeo', 9, 1),
-(10, 'Top Album', 10, 1),
-(11, 'The Final Countdown', 11, 2),
-(12, 'Take on Me', 12, 2);
+(1, 'Ma dope', 1, 1),
+(2, 'Maman ne le sait pas', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -122,7 +102,7 @@ CREATE TABLE `theme` (
 
 INSERT INTO `theme` (`idtheme`, `nom`, `miniature`) VALUES
 (1, 'RAP', NULL),
-(2, 'Année 80 ', NULL),
+(2, 'Année 80', NULL),
 (3, 'Année 2000', NULL),
 (4, 'R&B', NULL);
 
@@ -146,7 +126,7 @@ ALTER TABLE `joueur`
 -- Index pour la table `musique`
 --
 ALTER TABLE `musique`
-  ADD PRIMARY KEY (`id_musique`,`artiste_id`,`theme_idtheme`),
+  ADD PRIMARY KEY (`id_musique`),
   ADD KEY `fk_musique_artiste1_idx` (`artiste_id`),
   ADD KEY `fk_musique_theme1_idx` (`theme_idtheme`);
 
@@ -154,7 +134,7 @@ ALTER TABLE `musique`
 -- Index pour la table `musique_nonjoue`
 --
 ALTER TABLE `musique_nonjoue`
-  ADD PRIMARY KEY (`id`,`artiste_id`,`theme_idtheme`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_musique_nonjoue_artiste1_idx` (`artiste_id`),
   ADD KEY `fk_musique_nonjoue_theme1_idx` (`theme_idtheme`);
 
@@ -172,7 +152,7 @@ ALTER TABLE `theme`
 -- AUTO_INCREMENT pour la table `artiste`
 --
 ALTER TABLE `artiste`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `joueur`
 --
@@ -182,7 +162,7 @@ ALTER TABLE `joueur`
 -- AUTO_INCREMENT pour la table `musique`
 --
 ALTER TABLE `musique`
-  MODIFY `id_musique` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '\n', AUTO_INCREMENT=13;
+  MODIFY `id_musique` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '\n', AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `musique_nonjoue`
 --

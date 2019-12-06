@@ -6,5 +6,5 @@ $PARAM_nom_bd = 'bdd_blindtest';
 $PARAM_utilisateur = 'Blindtest';
 $PARAM_mot_passe = 'Nantes44';
 
-$connexion = new PDO('mysql:host=' . $PARAM_hote . ';port=' . $PARAM_port . ';dbname=' . $PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
+$connexion = new PDO('mysql:host='.$PARAM_hote.'; port='.$PARAM_port.'; dbname='.$PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
 ?>

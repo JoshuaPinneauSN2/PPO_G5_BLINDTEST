@@ -9,28 +9,47 @@
 
         $question = array();
 		
-		$theme=1;
-        $resultat = $connexion->query("SELECT * FROM musique WHERE 'theme_idtheme' = $theme");
+		$theme=$_GET['idtheme'];
+		$musique = $connexion->query("SELECT * FROM musique WHERE theme_idtheme = '$theme'");
+		
+		$artiste = $connexion->query("SELECT * FROM artiste WHERE id='$artiste' ");
+		
+        $musique->setFetchMode(PDO::FETCH_OBJ);
 
-        $resultat->setFetchMode(PDO::FETCH_OBJ);
+        while ($tableau = $musique->fetch()) {
+			$nom_musique = $tableau->nom;
+            $idartiste = $tableau->artiste_id;
 
-        while ($tableau = $resultat->fetch()) {
-			$nom_musique =$tableau->nom
-            $artiste = $tableau->artiste_id;
-
-            $question[] = array('nom_musique' => $nom_musique, 'artiste' => $artiste);
+            $question[] = array('nom_musique' => $nom_musique, 'artiste' => $idartiste);
         }
+		
+		
+		
         ?>
     <meta charset="UTF-8" />
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta name="viewport" content="width=device-width, initial-sca+le=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />-->
     <title>Quick Quiz - Play</title>
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="game.css" />
   </head>
   <body>
-    <div id="container">
-      <!--<div id="loader"></div>
+	<h2>Liste des elements questions</h2>
+        <div class="row">
+            <table>
+                <?php
+                foreach ($question as $quest) {
+                    ?>
+                    <tr>
+                        <td><?php echo $quest['nom_musique']; ?></td>
+                        <td><?php echo $quest['artiste']; ?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </table>
+    <!--<div id="container">
+      <div id="loader"></div>
       <div id="game" class="justify-center flex-column hidden">
         <div id="hud">
           <div id="hud-item">
@@ -39,7 +58,7 @@
               <div id="progressBarFull"></div>
             </div>-->
           
-          <div id="hud-item">
+          <!--<div id="hud-item">
             <p class="hud-prefix">
               Score
             </p>
@@ -70,6 +89,6 @@
           <p class="choice-prefix">D</p>
           <p class="choice-text" data-number="4"></p>
         </div>
-      </div>
+      </div>-->
   </body>
 </html>

@@ -10,11 +10,11 @@
   <body>
     <div class="container">
       <div id="home" class="flex-center flex-column">
-        <h1>Choix des thèmes</h1>
-        <a class="btn" href="game.html">Rap</a>
-        <a class="btn" href="game.html">Année 80</a>
-		<a class="btn" href="game.html">Année 2000</a>
-        <a class="btn" href="game.html">R&B</a>
+        <h1>Choix des themes</h1>
+        <a class="btn" href="game.php?idtheme=1&cptquestion=0&score=0">Rap</a>
+        <a class="btn" href="game.php?idtheme=2&cptquestion=0&score=0">Annee 80</a>
+        <a class="btn" href="game.php?idtheme=3&cptquestion=0&score=0">Annee 2000</a>
+        <a class="btn" href="game.php?idtheme=4&cptquestion=0&score=0">R&B</a>
       </div>
     </div>
   </body>

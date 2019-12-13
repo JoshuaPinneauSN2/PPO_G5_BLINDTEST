@@ -11,8 +11,7 @@
     <div class="container">
       <div id="home" class="flex-center flex-column">
         <h1>Blind Test</h1>
-        <a class="btn" href="theme.html">Jouer</a>
-        <a class="btn" href="highscores.html">Classement</a>
+        <a class="btn" href="theme.php">Jouer</a>
       </div>
     </div>
   </body>
